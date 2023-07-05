@@ -1,0 +1,103 @@
+{
+    "name": "openphish",
+    "version": "1.0.0",
+    "label": "OpenPhish",
+    "description": "OpenPhish helps to automatically identify zero-day phishing sites and provide comprehensive, actionable, real-time threat intelligence by using proprietary Artificial Intelligence algorithms.",
+    "publisher": "spryIQ.co",
+    "icon_small_name": "small.png",
+    "icon_large_name": "large.png",
+    "cs_compatible": true,
+    "cs_approved": false,
+    "category": "Threat Intelligence",
+    "help_online": "https://github.com/jitesh-spryiq/connector-threat-intelligence-platform/blob/develop/docs/OpenPhishConnectorDoc.md",
+    "configuration": {
+        "fields": [
+            {
+                "title": "Server URL",
+                "type": "text",
+                "description": "Server url to get feeds data.",
+                "tooltip": "Server url to get feeds data.",
+                "name": "server",
+                "required": true,
+                "visible": true,
+                "editable": true,
+                "value": "",
+                "placeholder": "e.g: https://opfeeds.s3-us-west-2.amazonaws.com or opfeeds.s3-us-west-2.amazonaws.com"
+            },
+            {
+                "title": "Access Key",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "type": "text",
+                "name": "access_key",
+                "tooltip": "Required access Key for openphish service authentication.",
+                "value": "",
+                "description": "Required access Key for openphish service authentication."
+            },
+            {
+                "title": "Secret Access Key",
+                "required": true,
+                "editable": true,
+                "visible": true,
+                "type": "password",
+                "name": "secret_access_key",
+                "value": "",
+                "tooltip": "Required secret access key for openphish service authentication.",
+                "description": "Required secret access key for openphish service authentication."
+            }
+        ]
+    },
+    "operations": [
+        {
+            "title": "Get Indicators For Latest Feed ",
+            "operation": "get_indicators_for_latest_feed",
+            "description": "Retrieves a list of all indicators from openphish feed for last 15 minutes.",
+            "annotation": "get_indicators_for_latest_feed",
+            "category": "investigation",
+            "parameters":[],
+            "output_schema": [
+                {
+                    "sector": "",
+                    "url": "",
+                    "ip": "",
+                    "brand": "",
+                    "isotime": "",
+                    "asn_name": "",
+                    "discover_time": "",
+                    "asn": "",
+                    "family_id": "",
+                    "host": "",
+                    "country_code": "",
+                    "tld": "",
+                    "country_name": ""
+                }
+            ]
+        },
+        {
+            "title": "Get Indicators For 24 Hr Feed ",
+            "operation": "get_indicators_for_24h_feed",
+            "description": "Retrieves a list of all indicators from openphish Feed for last 24 hours.",
+            "annotation": "get_indicators_for_24h_feed",
+            "category": "investigation",
+            "parameters":[],
+            "output_schema": [
+                {
+                    "sector": "",
+                    "url": "",
+                    "ip": "",
+                    "brand": "",
+                    "isotime": "",
+                    "asn_name": "",
+                    "discover_time": "",
+                    "asn": "",
+                    "family_id": "",
+                    "host": "",
+                    "country_code": "",
+                    "tld": "",
+                    "country_name": ""
+                }
+            ]
+        }
+    ]
+}

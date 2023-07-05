@@ -1,0 +1,176 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "f39a6c94-1016-42fc-ab00-df5687169c4b",
+      "@type": "WorkflowCollection",
+      "name": "Sample - OpenPhish - 1.0.0",
+      "description": "OpenPhish helps to automatically identify zero-day phishing sites and provide comprehensive, actionable, real-time threat intelligence by using proprietary Artificial Intelligence algorithms.",
+      "visible": true,
+      "image": null,
+      "recordTags": [
+        "Openphish"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "4292b7d9-56af-42ce-8be8-4909abff8c17",
+          "collection": "/api/3/workflow_collections/f39a6c94-1016-42fc-ab00-df5687169c4b",
+          "triggerLimit": null,
+          "description": "Retrieves a list of all indicators from openphish feed for last 15 minutes.",
+          "name": "Get Indicators For Latest Feed ",
+          "tag": "#OpenPhish",
+          "recordTags": [
+            "Openphish"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/090e5f67-e2c7-47e5-b360-996d5dbb4096",
+          "steps": [
+            {
+              "uuid": "090e5f67-e2c7-47e5-b360-996d5dbb4096",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "ccefe44e-e60f-4514-904c-9379dd44da8b",
+                "title": "OpenPhish: Get Indicators For Latest Feed ",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "9d50e1b9-e390-4fac-bdcf-69c0eeb0bfb1",
+              "@type": "WorkflowStep",
+              "name": "Get Indicators For Latest Feed ",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "OpenPhish",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "openphish",
+                "operation": "get_indicators_for_latest_feed",
+                "operationTitle": "Get Indicators For Latest Feed ",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "425ff426-b662-478c-bfde-2809a697bda3",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Indicators For Latest Feed ",
+              "sourceStep": "/api/3/workflow_steps/090e5f67-e2c7-47e5-b360-996d5dbb4096",
+              "targetStep": "/api/3/workflow_steps/9d50e1b9-e390-4fac-bdcf-69c0eeb0bfb1"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "33556fc3-f01f-42ca-a660-19b775d333b3",
+          "collection": "/api/3/workflow_collections/f39a6c94-1016-42fc-ab00-df5687169c4b",
+          "triggerLimit": null,
+          "description": "Retrieves a list of all indicators from openphish Feed for last 24 hours.",
+          "name": "Get Indicators For 24 Hr Feed ",
+          "tag": "#OpenPhish",
+          "recordTags": [
+            "Openphish"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/7766f5f9-ea7d-40cd-b094-6e6155257f52",
+          "steps": [
+            {
+              "uuid": "7766f5f9-ea7d-40cd-b094-6e6155257f52",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "c7b5006d-d16c-4285-808f-ed27b9b5b6b1",
+                "title": "OpenPhish: Get Indicators For 24 Hr Feed ",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "459ae8b0-110f-4e43-82d4-2a3731b14877",
+              "@type": "WorkflowStep",
+              "name": "Get Indicators For 24 Hr Feed ",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "OpenPhish",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "openphish",
+                "operation": "get_indicators_for_24h_feed",
+                "operationTitle": "Get Indicators For 24 Hr Feed ",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "787bcdad-3249-45c5-a721-bf991f825594",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Indicators For 24 Hr Feed ",
+              "sourceStep": "/api/3/workflow_steps/7766f5f9-ea7d-40cd-b094-6e6155257f52",
+              "targetStep": "/api/3/workflow_steps/459ae8b0-110f-4e43-82d4-2a3731b14877"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
