@@ -9,7 +9,7 @@
     "cs_compatible": true,
     "cs_approved": false,
     "category": "Threat Intelligence",
-    "help_online": "https://github.com/jitesh-spryiq/connector-threat-intelligence-platform/blob/develop/docs/OpenPhishConnectorDoc.md",
+    "help_online": "https://github.com/jitesh-spryiq/connector-openphish/blob/develop/docs/OpenPhishConnectorDoc.md",
     "configuration": {
         "fields": [
             {
